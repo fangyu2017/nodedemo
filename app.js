@@ -1,8 +1,8 @@
 var http = require('http')
 var fs = require('fs')
 var server = http.createServer(function(req, res) {
-  console.log(req.url)
-  if (req.url !== 'favicon.ico') {
+  if (req.url !== '/favicon.ico') {
+    console.log(req.url)
     if (req.url === '/index' || req.url == '/') {
       res.writeHeader(200, {'Content-type' : 'text/html'})
       fs.createReadStream(__dirname + '/index.html').pipe(res)
